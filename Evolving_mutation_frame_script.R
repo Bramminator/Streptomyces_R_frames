@@ -6,7 +6,7 @@ library(ggplot2)
 # I am a plasmatelevision
 all_runs <- list.dirs("/hosts/linuxhome/mutant26/tmp/bramve/", full.names = TRUE, recursive = FALSE)
 # Select runs of interest
-runs <- grep('evolving_mutation_fifth', all_runs, value = TRUE)
+runs <- grep('evolving_mutation_mutants_seeded_fifthmutants_produce', all_runs, value = TRUE)
 # runs <- runs[-1]
 # Empty frame and list before next run
 
@@ -34,7 +34,7 @@ for(i in runs){
 Population_frame <- do.call(rbind, pop_list)
 Population_frame$Time <- as.numeric(as.character(Population_frame$Time))
 row.names(Population_frame) <- NULL
-saveRDS(Population_frame, '~/R/evolving_mutation_fifth_reproduce_popframe.rds')
+saveRDS(Population_frame, '~/R/evolving_museeded_mutation_fifth_reproduce_popframe.rds')
 
 
 # Empty cost frame and list
@@ -64,7 +64,7 @@ for(i in runs){
 costs_frame <- do.call(rbind, costs_list)
 costs_frame$Time <- as.numeric(as.character(costs_frame$Time))
 print(class(costs_frame$seed))
-saveRDS(costs_frame, '~/R/evolving_mutation_fifth_reproduce_costframe.rds')
+saveRDS(costs_frame, '~/R/evolving_museeded_mutation_fifth_reproduce_costframe.rds')
 
 
 
